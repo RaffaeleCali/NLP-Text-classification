@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classificazione Testo</title>
+    <script src="script.js" defer></script>
+</head>
+<style>
+body, html{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+     /* Semi-transparent black */
+    color: white; /* White text color */
+    font-family: Arial, sans-serif;
+}
+
+.container{
+    height: 70vh;
+    width: 50vw;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2); /* Light background for the content area */
+    border: #3b9f34 5px 
+}
+
+.textarea{
+    border-radius: 10px;
+    height: 45vh;
+    font-size: 15px;
+    width: 45vw;
+    margin: 10px 0; /* Add some space around elements */
+    background-color: rgb(222, 222, 222);
+    text-decoration: none
+}
+
+.button{
+    margin-top: 2vh;
+    height: 5vh;
+    width: 10vw;
+    cursor: pointer;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF; /* Bootstrap primary blue */
+    color: white;
+}
+.button:hover{
+    background-color: #3b9f34;
+    scale: 1.1;
+}
+.res{
+    margin-top: 2vh;
+    font-size: 25px;
+}
+</style>
+<body>
+    <div class="container">
+        <h2>Classificatore di Testo</h2>
+        <textarea id="textInput" rows="4" cols="50" class="textarea"></textarea><br>
+        <button class="button"  onclick="classifyText()">Classifica Testo</button>
+        <div id="result"class="res" ></div>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </div>
+</body>
+</html>

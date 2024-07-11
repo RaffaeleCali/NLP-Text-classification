@@ -1,0 +1,41 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    color: white; /* White text color */
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    text-align: center;
+    height: 70vh;
+    width: 40vw;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2); /* Light background for the content area */
+}
+
+textarea, button {
+    margin: 10px 0; /* Add some space around elements */
+    background-color: rgb(178, 178, 178);
+    text-decoration: none
+}
+
+button {
+    cursor: pointer;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF; /* Bootstrap primary blue */
+    color: white;
+}
+
+#results {
+    height: 3vh;
+    width: 30vw;
+    color: white;
+    text-align: left; /* Align responses to the left */
+}
