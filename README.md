@@ -1,56 +1,56 @@
-# Progetto NLP - Classificazione del Testo
+# NLP Project - Text Classification
 
-## Autore
+## Author
 Raffaele Calì 
 
-## Descrizione
-Questo progetto esplora varie strategie per la classificazione del testo, categorizzando i testi in cinque categorie: business, sport, politica, tecnologia e scienza, e 'altro'. Il progetto combina tecniche di deep learning e machine learning classico per ottenere i migliori risultati possibili.
+## Description
+This project explores various strategies for text classification, categorizing texts into five categories: business, sports, politics, technology, science, and 'other'. The project combines deep learning techniques and classical machine learning to achieve the best possible results.
 
-## Indice
-1. [Introduzione](#introduzione)
+## Table of Contents
+1. [Introduction](#introduction)
 2. [Dataset](#dataset)
-3. [Tecniche Utilizzate e Risultati](#tecniche-utilizzate-e-risultati)
-4. [Conclusioni e Sviluppi Futuri](#conclusioni-e-sviluppi-futuri)
+3. [Techniques Used and Results](#techniques-used-and-results)
+4. [Conclusions and Future Developments](#conclusions-and-future-developments)
 5. [Demo](#demo)
 
-## Introduzione
-Il progetto si concentra sulla classificazione del testo, definita come il processo di categorizzazione del testo in gruppi organizzati. L'obiettivo è classificare i testi in cinque categorie utilizzando tecniche di deep learning, machine learning classico e una combinazione di entrambe.
-
+## Introduction
+The project focuses on text classification, defined as the process of categorizing text into organized groups. The goal is to classify texts into five categories using deep learning techniques, classical machine learning, and a combination of both.
+For more information open `relazione.pdf`.
 ## Dataset
-Il dataset finale è una combinazione di tre dataset: BBC News, AG News e 20Newsgroup. Questi sono stati mappati in cinque categorie predefinite per garantire coerenza. Il dataset contiene circa 130.000 record con una distribuzione bilanciata tra le categorie.
+The final dataset is a combination of three datasets: BBC News, AG News, and 20Newsgroup. These have been mapped into five predefined categories to ensure consistency. The dataset contains approximately 130,000 records with a balanced distribution across categories.
 
-### Struttura del Dataset
-- **BBC News**: Articoli giornalistici formali.
-- **AG News**: Sintesi di notizie brevi e incisive.
-- **20Newsgroup**: Messaggi di forum con stile informale.
+### Dataset Structure
+- **BBC News**: Formal journalistic articles.
+- **AG News**: Brief and concise news summaries.
+- **20Newsgroup**: Forum messages with an informal style.
 
-Il dataset è suddiviso in due parti:
+The dataset is divided into two parts:
 - `dataset_k_neigh.csv`
 - `dataset_Longformer.csv`
 
-Un dataset secondario, `generated_pairs.csv`, è stato creato per il task di classificazione binaria.
+A secondary dataset, `generated_pairs.csv`, was created for the binary classification task.
 
-## Tecniche Utilizzate e Risultati
+## Techniques Used and Results
 
-### 1. Baseline: Estrazione Token CLS da Longformer e Classificazione con KNN
-- **Procedura**: Preprocessing dei testi, estrazione degli embeddings CLS con Longformer, classificazione con KNN.
-- **Risultati**:
+### 1. Baseline: CLS Token Extraction from Longformer and Classification with KNN (CLS.ipynb)
+- **Procedure**: Text preprocessing, extraction of CLS embeddings with Longformer, classification with KNN.
+- **Results**:
   - Accuracy: 0.891243
   - Precision: 0.898594
   - Recall: 0.823507
   - F1: 0.850655
 
-### 2. LDA e KNN
-- **Procedura**: Configurazione dei topic con LDA, analisi dei testi, classificazione con KNN.
-- **Risultati**:
+### 2. LDA and KNN (CLS_LDA.ipynb)
+- **Procedure**: Topic configuration with LDA, text analysis, classification with KNN.
+- **Results**:
   - Accuracy: 0.730223
   - Precision: 0.659870
   - Recall: 0.620796
   - F1: 0.625178
 
-### 3. Fine-tuning di Longformer + KNN
-- **Procedura**: Fine-tuning di Longformer su un task di classificazione binaria, estrazione degli embeddings CLS, classificazione con KNN.
-- **Risultati**:
+### 3. Fine-tuning Longformer + KNN (binary_def.ipynb, FT_CLS_LDA.ipynb, and FT_CLS.ipynb)
+- **Procedure**: Fine-tuning Longformer on a binary classification task, extracting CLS embeddings, classification with KNN.
+- **Results**:
   - CLS: 
     - Accuracy: 0.891243
     - Precision: 0.898594
@@ -62,28 +62,20 @@ Un dataset secondario, `generated_pairs.csv`, è stato creato per il task di cla
     - Recall: 0.820107
     - F1: 0.843028
 
-### 4. Fine-tuning di Longformer con Classificazione Multiclasse
-- **Procedura**: Fine-tuning di Longformer per la classificazione multiclasse.
-- **Risultati**:
+### 4. Fine-tuning Longformer with Multiclass Classification (deflong-multiclass.ipynb)
+- **Procedure**: Fine-tuning Longformer for multiclass classification.
+- **Results**:
   - Accuracy: 0.8855
   - Precision: 0.8733
   - Recall: 0.8545
   - F1: 0.8624
 
-## Conclusioni e Sviluppi Futuri
-Il fine-tuning di Longformer per un compito di classificazione multiclasse ha mostrato le migliori prestazioni. Per sviluppi futuri, si consiglia di esplorare ulteriormente i metodi per gestire l'attenzione globale nei modelli transformers.
+## Conclusions and Future Developments
+Fine-tuning Longformer for a multiclass classification task has shown the best performance. For future developments, it is recommended to further explore methods for handling global attention in transformer models.
 
 ## Demo
-Per provare la demo:
-1. Esegui il file `demo.py`.
-2. Inserisci il testo nella textarea.
-3. Clicca su "Classifica testo" per vedere i risultati.
-
-## Requisiti
-- Python 3.x
-- Librerie necessarie (vedi `requirements.txt`)
-
-## Istruzioni di Installazione
-1. Clona il repository:
-   ```bash
-   git clone https://github.com/tuo-username/tuo-repository.git
+To try the demo:
+1. Run the `demo.py` file.
+2. Enter the text in the textarea.
+3. Click on "Classify text" to see the results.
+---
